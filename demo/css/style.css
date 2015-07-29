@@ -2,29 +2,38 @@ body, ul, li {
 	margin: 0; 
 	padding: 0;
 }
+#location {
+	width: 300px;
+	margin: 25px auto 0;
+	
+}
+#location h1 {
+	height: 30px;
+	text-align: center;
+	font-family: Arail;
+	font-size: 14px;
+	color: #888;
+	text-shadow: inset 1px 1px 1px #ccc;
+	line-height: 20px;
+}
 #body {
 	position: relative;
 	width: 300px;
 	height: 300px;
-	border: 1px solid #000;
 	border-radius: 50%;
-	margin: 50px auto 30px;
+	margin: 25px auto 30px;
 }
 #body ul {
 	position: relative;
 	height: 300px;
 	list-style: none;
-
 }
 #body li {
 	position: absolute;
-	height: 12px;
-	width: 2px;
-	background-color: #888;
-	left: 149px;
 	top: 0;
 	transform-origin: center 150px; 
 }
+
 #body li:nth-of-type(5n+1) {
 	height: 15px;
 	background-color: red;
@@ -32,26 +41,25 @@ body, ul, li {
 #hour, #min, #sec {
 	position: absolute;
 }
-#hour {
+#body .hour {
 	height: 50px;
 	width: 8px;
-	background-color: #000;
 	top: 100px;
 	left: 146px;
 	transform-origin: center bottom; 
+	transition: all 2s;
 }
-#min {
+#body .min {
 	height: 80px;
 	width: 6px;
-	background-color: #888;
 	top: 70px;
 	left: 147px;
 	transform-origin: center bottom; 
+	transition: all 2s;
 }
-#sec {
+#body .sec {
 	height: 100px;
 	width: 4px;
-	background-color: red;
 	top: 50px;
 	left: 148px;
 	transform-origin: center bottom; 
@@ -69,36 +77,72 @@ body, ul, li {
 /*下拉时区*/
 #zone{
 	width: 300px;
-	height: 150px;
 	margin: 0 auto;
-	font-size: 16px;
-	text-align: center;
 }
 #zone-list {
 	width: 300px;
 	height: 50px;
 	text-align: center;
 	background-color: #444;
+	border: 1px solid #888;
 	color: #fff;
 	outline: none;
 	border: 1px solid #000;
 	padding-left: 5px;
+	border-radius: 8px;
+	text-align: center;
+	font-size: 16px/50px;
+	font-family: "微软雅黑";
 }
+/*确认按钮*/
 #btn {
 	display: block;
 	width: 150px;
 	height: 50px;
-	margin: 30px auto 0;
+	margin: 20px auto 0;
 	/*border: 1px solid #888;*/
 	background-color: rgba(122,174,170,0.5);
-	border-radius: 6px;
+	border-radius: 8px;
 	text-decoration: none;
 	color: #888;
 	line-height: 50px;
+	text-align: center;
+	font-size: 16px/50px;
+	font-family: "微软雅黑";
 }
 #btn:hover {
 	background-color: rgba(122,174,170,0.7);
 }
 #btn:active {
 	background-color: rgba(122,174,170,1);
+}
+
+
+/*表盘主题1*/
+.theme1 li{
+	height: 8px;
+	width: 2px;
+	background-color: #888;
+	left: 149px;
+}
+.theme1 #min {
+	height: 120px;
+	width: 8px;
+	background-color: #000;
+	top: 30px;
+	left: 146px;
+}
+.theme1 #hour {
+	height: 95px;
+	width: 8px;
+	background-color: #000;
+	top: 55px;
+	left: 146px;
+}
+.theme1 #sec {
+	height: 120px;
+	width: 4px;
+	background-color: red;
+	top: 30px;
+	left: 148px;
 }

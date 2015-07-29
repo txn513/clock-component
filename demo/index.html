@@ -2,35 +2,39 @@
 <html lang="zh">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>时钟</title>
 	<style id="css"></style>
 </head>
 <body>
-	<div class="location">
-		<h1></h1>
+	<div id="location">
+		<h1 id="title">(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi</h1>
 	</div>
-	<div id="wrap">
-		<div id="body">
-			<ul id="list"></ul>
-			<div id="hour"></div>
-			<div id="min"></div>
-			<div id="sec"></div>
-			<div id="center"></div>
-		</div>
+	<div id="body" class="theme1">
+		<ul id="list"></ul>
+		<div id="hour" class="hour"></div>
+		<div id="min" class="min"></div>
+		<div id="sec" class="sec"></div>
+		<div id="center"></div>
 	</div>
 	<div id="zone">
 		<select id="zone-list">
-			
+			<option selected="selected">请选择时区</option>
 		</select>
-		<a href="javascript:;" id="btn">更换时区</a>
 	</div>
+	<a href="javascript:;" id="btn">更换时区</a>
 	<script src="js/clock.js"></script>
 	<script>
 	window.onload = function(){
 		var c1 = new Clock();
-		c1.init({});
-		c1.setColor();
+		c1.init({
+			hourColor: 'pink',
+			minColor: 'pink',
+			secColor: 'blue',
+			offset: '8'
+		});
+		// c1.setColor();
 		c1.getZone();
 	}
 	</script>
