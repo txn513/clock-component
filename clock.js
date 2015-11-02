@@ -3,6 +3,16 @@ window.onload = function (){
 	c1.init({
 		
 	});
+
+	var xhr = new XMLHttpRequest();
+	xhr.open('get','./timezones.json', true);
+	xhr.send();
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4){
+			var data = JSON.parse(xhr.responseText);
+			console.log(Object.prototype.toString.call(data));
+		}
+	}
 }
 function Clock(){
 	this.oHour = document.getElementById('hour');
