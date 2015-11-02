@@ -16,20 +16,21 @@
 	</div>
 	<div id="zone">
 		<select id="zone-list">
-			<option>cccxxxx</option>
-			<option>cccxxxx</option>
-			<option>cccxxxx</option>
-			<option>eeeeeee</option>
+			
 		</select>
 		<input type="button" id="btn" value="更换时区"></input>
 	</div>
 	<script src="clock.js"></script>
 	<script>
+		var c1 = new Clock();
+		c1.init({});
+
 		var oBtn = document.getElementById("btn");
 		var oSelect = document.getElementById('zone-list');
 		oBtn.onclick = function(){
 			alert(oSelect.value);
 		}
+		
 	</script>
 </body>
 </html>

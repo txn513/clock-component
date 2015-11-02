@@ -1,25 +1,10 @@
-window.onload = function (){
-	var c1 = new Clock();
-	c1.init({
-		
-	});
-
-	var xhr = new XMLHttpRequest();
-	xhr.open('get','./timezones.json', true);
-	xhr.send();
-	xhr.onreadystatechange = function(){
-		if(xhr.readyState == 4){
-			var data = JSON.parse(xhr.responseText);
-			console.log(Object.prototype.toString.call(data));
-		}
-	}
-}
 function Clock(){
 	this.oHour = document.getElementById('hour');
 	this.oMin = document.getElementById('min');
 	this.oSec = document.getElementById('sec');
 	this.oUl = document.getElementById('list');
 	this.oCss = document.getElementById('css');
+	this.oZone = document.getElementById('zone-list')
 	this.myDate = null;
 	this.myHour = null;
 	this.myMin = null;
@@ -44,6 +29,7 @@ Clock.prototype.init = function(obj){
 		This.getTime();
 	}, 1000);
 	this.setColor();
+	this.creatTimeZone();
 }
 Clock.prototype.getTime = function(){
 	this.myDate = new Date();
@@ -64,4 +50,21 @@ Clock.prototype.extend = function(obj1, obj2){
 	for(var attr in obj2){
 		obj1[attr] = obj2[attr];
 	};
+}
+Clock.prototype.creatTimeZone = function(){
+	var This = this;
+	var xhr = new XMLHttpRequest();
+	var html = null;
+	xhr.open('get','./timezones.json', true);
+	xhr.send();
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4){
+			var data = JSON.parse(xhr.responseText);
+			console.log(Object.prototype.toString.call(data));
+			for (var i=0; i<data.length; i++){
+				html += "<option index='"+ i +"'>"+ data[i].text +"</option>";
+			}
+			This.oZone.innerHTML = html;
+		}
+	}
 }
