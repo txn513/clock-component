@@ -7,30 +7,32 @@
 	<style id="css"></style>
 </head>
 <body>
-	<div id="body">
-		<ul id="list"></ul>
-		<div id="hour"></div>
-		<div id="min"></div>
-		<div id="sec"></div>
-		<div id="center"></div>
+	<div class="location">
+		<h1></h1>
+	</div>
+	<div id="wrap">
+		<div id="body">
+			<ul id="list"></ul>
+			<div id="hour"></div>
+			<div id="min"></div>
+			<div id="sec"></div>
+			<div id="center"></div>
+		</div>
 	</div>
 	<div id="zone">
 		<select id="zone-list">
 			
 		</select>
-		<input type="button" id="btn" value="更换时区"></input>
+		<a href="javascript:;" id="btn">更换时区</a>
 	</div>
 	<script src="clock.js"></script>
 	<script>
+	window.onload = function(){
 		var c1 = new Clock();
 		c1.init({});
-
-		var oBtn = document.getElementById("btn");
-		var oSelect = document.getElementById('zone-list');
-		oBtn.onclick = function(){
-			alert(oSelect.value);
-		}
-		
+		c1.setColor();
+		c1.getZone();
+	}
 	</script>
 </body>
 </html>
