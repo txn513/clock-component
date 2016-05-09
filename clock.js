@@ -57,25 +57,40 @@ var Clock = (function(){
 	Clock.prototype.getZone = function(){
 		var This = this;
 		var xhr = new XMLHttpRequest();
-		var html = null;
+		var html = '';
 		var index = null;
 		var offset = null;
-		xhr.open('get','./timezones.json', true);
+		xhr.open('get','http://tianxuning.com/demo/worldtime/timezones.json', true);
 		xhr.send();
 		xhr.onreadystatechange = function(){
 			if(xhr.readyState == 4){
 				var data = JSON.parse(xhr.responseText);
 				for (var i=0; i<data.length; i++){
-					html += "<option zone-index='"+ i +"'>"+ data[i].text +"</option>";
+					html += "<option>"+ data[i].text +"</option>";
 				}
-				This.oZone.innerHTML = html;
+				This.oZone.innerHTML += html;
 				This.oBtn.onclick = function(){
 		 			index = This.oZone.selectedIndex;
-		 			offset = data[index].offset;
+		 			if( index == 0){
+		 				offset = 8;
+		 				index = -1;
+		 			}
+		 			else {
+		 				index = index -1;
+		 				offset = data[index].offset;
+		 			}
 		 			This.setting.offset = offset;
+		 			This.title('title', data, index);
+		 			
 		 		}
 			}
 		}
+	}
+	Clock.prototype.title = function(id, data, index){
+		var html = null;
+		var oTitle = document.getElementById(id);
+		html = data[index].text;
+		oTitle.innerHTML = html;
 	}
 	return Clock;
 })();

@@ -32,7 +32,6 @@ var Clock = (function(){
 		setInterval(function(){
 			This.getTime();
 		}, 1000);
-		this.setColor();
 	}
 	Clock.prototype.getTime = function(){
 		this.myDate = new Date();
@@ -48,7 +47,7 @@ var Clock = (function(){
 	Clock.prototype.setColor = function(){
 		this.oHour.style.backgroundColor =  this.setting.hourColor;
 		this.oMin.style.backgroundColor =  this.setting.minColor;
-		this.oSec.style.backgroundColor = this.setting.secColor;
+		this.oSec.style.backgroundColor = this.setting.scColor;
 	}
 	Clock.prototype.extend = function(obj1, obj2){
 		for(var attr in obj2){
