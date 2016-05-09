@@ -1,6 +1,6 @@
 # js时钟组件
 
-![image](https://github.com/txn513/clock-component/img/1.png)
+<img src="img/1.png" alt="sreenshot">
 
 ##如何使用
 
