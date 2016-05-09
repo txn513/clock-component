@@ -34,18 +34,25 @@
 
     <script src="clock.js" type="text/javascript"></script>
     <script>
-     $(function(){
-        var clock = new Clock();
-        clock.init({
+    window.onload = function(){
+        var c1 = new Clock();
+        c1.init({
             hourColor: 'pink',
             minColor: 'pink',
             secColor: 'blue',
             offset: '8'
         });
-        clock.getZone();
-      });
+        c1.getZone();
+    }
   </script>
 </body>
 ```
 
 ##文档
+###参数
+####hourColor
+时针颜色
+####minColor
+分针颜色
+####secColor
+秒针颜色
