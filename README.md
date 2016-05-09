@@ -49,10 +49,17 @@
 ```
 
 ##文档
+
 ###参数
-####hourColor
+
+#####hourColor
 时针颜色
-####minColor
+#####minColor
 分针颜色
-####secColor
+#####secColor
 秒针颜色
+#####offset
+当前时区
+
+###方法
+#####getZone()
