@@ -4,19 +4,19 @@
 
 ##如何使用
 
-引入clock.js
+####引入clock.js
 
 ```html
     <script src="clock.js" type="text/javascript"></script>
 ```
 
-引入style.css
+####引入style.css
 
 ```html
     <link rel="stylesheet" type="text/css" href="style.css">
 ```
 
-基本结构
+####基本结构
 
 ```html
 <!doctype html>
