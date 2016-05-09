@@ -55,58 +55,59 @@
 #####hourColor
 时针颜色
 ```html
-    var c1 = new Clock();
-        c1.init({
-            hourColor: 'pink'
-        });
+var c1 = new Clock();
+c1.init({
+    hourColor: 'pink'
+});
 ```
 
 #####minColor
 分针颜色
 ```html
-    var c1 = new Clock();
-        c1.init({
-            minColor: 'pink'
-        });
+var c1 = new Clock();
+c1.init({
+    minColor: 'pink'
+});
 ```
 
 #####secColor
 秒针颜色
 ```html
-    var c1 = new Clock();
-        c1.init({
-            secColor: 'pink'
-        });
+var c1 = new Clock();
+c1.init({
+    secColor: 'pink'
+});
 ```
 
 #####offset
 当前时区
 ```html
-    var c1 = new Clock();
-        c1.init({
-            offset: '8'
-        });
+var c1 = new Clock();
+c1.init({
+    offset: '8'
+});
 ```
 
 ###方法
 
 #####init()
+初始化方法
 ```html
-    var c1 = new Clock();
-    c1.init({
-        hourColor: 'pink',
-        minColor: 'pink',
-        secColor: 'blue',
-        offset: '8'
-    });
+var c1 = new Clock();
+c1.init({
+    hourColor: 'pink',
+    minColor: 'pink',
+    secColor: 'blue',
+    offset: '8'
+});
 ```
 
 #####getZone()
 通过ajax获取全球时区
 ```html
-    var c1 = new Clock();
-    c1.getZone();
+var c1 = new Clock();
+c1.getZone();
 ```
 
 ##Author
-[Xuning Tian](https://github.com/txn513);
+[Xuning Tian](https://github.com/txn513)
